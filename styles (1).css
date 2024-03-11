@@ -1,5 +1,13 @@
 /* Add to styles.css */
 
+*{
+  margin: 0;
+  padding: 0;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
 .header {
   background-color: #9C8064;
   color: #fff;
@@ -62,6 +70,7 @@ body{
   width: 100%;
   margin-bottom: -1%;
   margin-left: -1%;
+  bottom: 0;
 }
 
 .footer__text {
@@ -92,6 +101,7 @@ body{
   margin-bottom: 0px;
   text-align: center;
   font-family: Helvetica;
+  margin-top: 2%;
 }
 
 /* Add to styles.css */
@@ -166,6 +176,7 @@ body{
   text-transform: uppercase;
   transition: background-color 0.3s ease;
   border-radius: 50px;
+  margin-bottom: 47.5%;
 }
 
 .form__button:hover {
