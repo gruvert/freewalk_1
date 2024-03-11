@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles (1).css">
+</head>
+<body> 
+  <header class="header">
+    <div class="header__content">
+        <div class="header__logo">
+            <img src="map.png" alt="Map" class="header__map">
+            <img src="filter.png"  alt="Filter" class="header__filter">
+            <img src="resturenter.png"  alt="Restorator" class="header__restorator">
+            <img src="logo.png" alt="FreeWalk logo" class="header__logo-image">
+              
+          </div>
+      </div>
+  </header>
+
+
+    <div class="container">
+        <h1 class="container__title">Registration</h1> 
+            <div class="form__note">
+                Already have an account? <a href="#" style="color:#988168">Log in</a>
+            </div>
+        <form class="form">
+
+            <label class="form__label" for="establishment-name"></label>
+            <input class="form__input" type="text" id="establishment-name" required placeholder="Enter name of the establishment">
+
+            <label class="label" for="establishment-description"></label>
+            <textarea class="form__input form__textarea" id="establishment-description" required placeholder="Enter short description"></textarea>
+
+            <label class="form__label" for="establishment-address"></label>
+            <input class="form__input" type="text" id="establishment-address" required placeholder="Enter address">
+
+            <label class="form__label" for="total-seats"></label>
+            <input class="form__input" type="number" id="total-seats" required placeholder="Enter total number of seats">
+
+            <label class="form__label" for="email"></label>
+            <input class="form__input" type="email" id="email" required placeholder="Enter email">
+
+            <label class="form__label" for="password"></label>
+            <input class="form__input" type="password" id="password" required placeholder="Choose a password">
+            <button class="form__button" type="submit">Register</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">&copy; 2024 FreeWalk. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
