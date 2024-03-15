@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FreeWalk</title>
+<style>
+  body {
+    background-color: #D2B48C;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+  }
+  header {
+    background-color: #A67C52;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .buttondark{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #A0522D;
+    color:  white;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .buttondark.dark{
+    background-color: #333;
+  }
+  .button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .button.light {
+    background-color: #A0522D;
+  }
+  footer {
+    background-color: #A67C52;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  FreeWalk
+</header>
+
+<div class="container">
+  <div class="row">
+    {% for num in free_places %}
+    <button onclick="toggleLight(this)" data-id="{{ id }}" class="button">{{ num }}</button>
+    {% endfor %}
+    {% for num in taken_places %}
+    <button onclick="toggleLight(this )" data-id="{{ id }}" class="button light">{{ num }}</button>
+    {% endfor %}
+  </div>
+</div>
+
+<footer>
+  EST. 2024
+</footer>
+
+<script>
+  function toggleLight(button) {
+      // Toggle the button.light class
+      var id = button.getAttribute('data-id');
+       // Check if the button has the button.light class
+       if (button.classList.contains('light')) {
+          // Send PUT request with argument -1
+          fetch(`/change/${id}`, {
+              method: 'PUT',
+              body: JSON.stringify({ arg: 1 }),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          });
+      } else {
+          // Send PUT request with argument 1
+          fetch(`/change/${id}`, {
+              method: 'PUT',
+              body: JSON.stringify({ arg: -1 }),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          });
+      }
+      button.classList.toggle('light');
+      
+     
+  }
+  </script>
+</body>
+</html>
