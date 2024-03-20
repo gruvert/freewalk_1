@@ -30,7 +30,7 @@ def change_table(request:Request, id:int, data: ChangeData):
     user = get_by_id(id)
     if n == 1:
         update_info(user['id'],user['free_places']+1)
-    else:  # Use "elif" instead of "else if" in Python
+    else:
         update_info(user['id'], user['free_places']-1)
 
 
