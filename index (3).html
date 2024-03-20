@@ -10,9 +10,45 @@
   <header class="header">
     <div class="header__content">
         <div class="header__logo">
+            <a href="table.html">
             <img src="map.png" alt="Map" class="header__map">
-            <img src="filter.png"  alt="Filter" class="header__filter">
-            <img src="logo.png" alt="FreeWalk logo" class="header__logo-image">
+            </a>
+            <img src="filter.png" alt="Filter" class="header__filter" id="filter-button" onclick="showCategoriesWindow()" role="button">
+            <script>
+                function showCategoriesWindow() {
+                  const categoriesWindow = document.createElement('div');
+                  categoriesWindow.classList.add('categories-window');
+                  categoriesWindow.innerHTML = `
+                    <h3>Choose categories for your restaurant:</h3>
+                    <ul>
+                      <li><input type="checkbox" id="category-italian" name="categories" value="italian" checked> <label for="category-italian">Italian</label></li>
+                      <li><input type="checkbox" id="category-chinese" name="categories" value="chinese" checked> <label for="category-chinese">Chinese</label></li>
+                      <li><input type="checkbox" id="category-japanese" name="categories" value="japanese" checked> <label for="category-japanese">Japanese</label></li>
+                      <li><input type="checkbox" id="category-mexican" name="categories" value="mexican" checked> <label for="category-mexican">Mexican</label></li>
+                      <li><input type="checkbox" id="category-indian" name="categories" value="indian" checked> <label for="category-indian">Indian</label></li>
+                      <li><input type="checkbox" id="choose-all" onchange="selectAll()"> <label for="choose-all">Choose all</label></li>
+                    </ul>
+                    <button class="categories-window__button" onclick="closeCategoriesWindow()">Confirm</button>
+                  `;
+                  document.body.appendChild(categoriesWindow);
+                }
+              
+                function closeCategoriesWindow() {
+                  const categoriesWindow = document.querySelector('.categories-window');
+                  if (categoriesWindow) {
+                    categoriesWindow.remove();
+                  }
+                }
+              
+                function selectAll() {
+                  const checkboxes = document.querySelectorAll('.categories-window input[type="checkbox"]');
+                  const chooseAllCheckbox = document.getElementById('choose-all');
+                  checkboxes.forEach(checkbox => {
+                    checkbox.checked = chooseAllCheckbox.checked;
+                  });
+                }
+              </script>
+              <img src="logo.png" alt="FreeWalk logo" class="header__logo-image">
           </div>
       </div>
   </header>
