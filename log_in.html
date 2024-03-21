@@ -24,15 +24,16 @@
             <div class="form__note">
                 Want to create an account? <a href="index.html" style="color:#988168">Register</a>
             </div>
-        <form class="form">
-
-            <label class="form__label" for="email"></label>
-            <input class="form__input" type="email" id="email" required placeholder="Enter email">
-
-            <label class="form__label" for="password"></label>
-            <input class="form__input" type="password" id="password" required placeholder="Enter password">
-            <form class="form" method="Get" action="/login/"><button class="form__button" type="submit">Log in</button> </form>
-        </form>
+            <form class="form" method="POST" action="/login/">
+                <label class="form__label" for="email"></label>
+                <input class="form__input" type="email" id="email" name="email" required placeholder="Enter email">
+                            
+                <label class="form__label" for="password"></label>
+                <input class="form__input" type="password" id="password" name="password" required placeholder="Enter password">
+                            
+                <button class="form__button" type="submit">Log in</button>
+            </form>
+            
     </div>
 
     <footer class="footer">
