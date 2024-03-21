@@ -1,3 +1,4 @@
+<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,27 +60,27 @@
             <div class="form__note">
                 Already have an account? <a href="log_in.html" style="color:#988168">Log in</a>
             </div>
-        <form class="form">
-
-            <label class="form__label" for="establishment-name"></label>
-            <input class="form__input" type="text" id="establishment-name" required placeholder="Enter name of the establishment">
-
-            <label class="label" for="establishment-description"></label>
-            <textarea class="form__input form__textarea" id="establishment-description" required placeholder="Enter short description"></textarea>
-
-            <label class="form__label" for="establishment-address"></label>
-            <input class="form__input" type="text" id="establishment-address" required placeholder="Enter address">
-
-            <label class="form__label" for="total-seats"></label>
-            <input class="form__input" type="number" min="1" id="total-seats" required placeholder="Enter total number of seats">
-
+          <form class="form" method="POST" action="/register/" enctype="application/x-www-form-urlencoded">
+          
+            <label class="form__label" for="name"></label>
+            <input class="form__input" type="text" id="name" name="name" required placeholder="Enter your name">
+        
+            <label class="form__label" for="short_description"></label>
+            <textarea class="form__input form__textarea" id="short_description" name="short_description" required placeholder="Enter short description"></textarea>
+        
+            <label class="form__label" for="address"></label>
+            <input class="form__input" type="text" id="address" name="address" required placeholder="Enter your address">
+        
+            <label class="form__label" for="count_places"></label>
+            <input class="form__input" type="number" min="1" id="count_places" name="count_places" required placeholder="Enter number of places">
+        
             <label class="form__label" for="email"></label>
-            <input class="form__input" type="email" id="email" required placeholder="Enter email">
-
+            <input class="form__input" type="email" id="email" name="email" required placeholder="Enter your email">
+        
             <label class="form__label" for="password"></label>
-            <input class="form__input" type="password" id="password" required placeholder="Choose a password">
-            <form class="form" method="POST" action="/register/"><button class="form__button" type="submit">Register</button> </form>
-
+            <input class="form__input" type="password" id="password" name="password" required placeholder="Choose a password">
+                    
+            <button class="form__button" type="submit">Register</button>
         </form>
     </div>
 
@@ -88,5 +89,7 @@
             <p class="footer__text">&copy; 2024 FreeWalk. All rights reserved.</p>
         </div>
     </footer>
+    
 </body>
 </html>
+
